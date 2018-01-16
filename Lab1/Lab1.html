@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es">
+<title>Laboratorio 1: Introduccion</title>
+	<meta charset="UTF-8">
+<body>
+	<header>
+		<h1>Laboratorio 1</h1>
+	</header>
+	<hr>
+
+	
+	<article id="Informacion">
+		<table border="2px">
+			<thead>Informacion de Contacto</thead>
+			<tr>
+				<td>Nombre: </td>
+				<td>Josue Huitznahui Bolaños Mejía</td>
+			</tr>
+			<tr>
+				<td>Matricula: </td>
+				<td>A01207438</td>
+			</tr>
+			<tr>
+				<td>Carrera: </td>
+				<td>ISC11</td>
+			</tr>
+			<tr>
+				<td>Correo Personal: </td>
+				<td>Huitznahui_2@hotmail.com</td>
+			</tr>
+		</table>
+		<br>
+		
+		<img src="yo.jpg" width="200px">
+	</article>
+
+
+	<br>
+	<br>
+	<hr>
+	<br>
+	<article id="indice">
+		<h2>Indice</h2>
+		<ul>
+			<li><a href="Lab1.html#Formulario">Formulario</a> </li>
+			<li><a href="Lab1.html#hobbies">Hobbies</a></li>
+			<li><a href="Lab1.html#Definiciones">Definiciones</a> </li>
+			<li><a href="Lab1.html#Preguntas">Preguntas</a> </li>
+			<li><a href="Lab1.html#Referencias">Referencias</a> </li>
+		</ul>
+		
+	</article>
+	<br>
+	<br>
+	<hr>
+	<br>
+	<strong id="Formulario">Formulario</strong>
+
+	<form >
+		<p>Seleciona tu genero</p>
+		<input type="radio" name="gender" value="hombre" checked> Hombre<br>
+  		<input type="radio" name="gender" value="mujer"> Mujer<br>
+  		<input type="radio" name="gender" value="Otro"> Otro<br>
+  		<br>
+  		<br>
+  		<label for="nombre"> Nombre: </label><input type="text" name="nombre" placeholder="Marco Polo" id="nombre">
+  		<br>
+  		<label for="temp"> Tiempo: </label><input type="time" name="tiempo"  id="temp">
+  		<br>
+  		<br>
+  		<input type="button" name="Enviar" onclick="al()" value="Enviar">
+  		
+  		<script>
+			function al() {
+				var genero;
+				var nomb;
+				nomb=document.getElementsByName("nombre")[0].value;
+				genero=document.getElementsByName("gender")[0].value;
+				var txt;
+				txt= "Usted se llama "+nomb+" y se identifica como: "+genero;
+			    alert(txt);
+			}
+		</script>
+	</form>
+	<br>
+	<br>
+	<hr>
+	<br>
+	<article id="hobbies">
+		<h2>Mis Hobbies</h2>
+		<p>Mis principales aficiones son el Baile, los Videojuegos y salir con amigos, y por supuesto me encanta resolver problemas que sigan una logica matematica.</p>
+		<p>Hablemos de lo primero, el baile. Actualmente estoy dentro de la clase de "Bailes de salon Intermedio" y "Bailes de salon Avanzado". he de admitir que al principio no estaba muy seguro de querer bailar, principalmente por el hecho de que tengo dos pies izquierdos, o mejor dicho tenia en aquel tiempo. La primera vez que me meti a clases de baile fue cuando iba en primer semestre, y la verdad fue unicamente porque tenia curiosidad y por el hecho de que en la secundaria me di cuenta de que no sabia nada de eso. Recuerdo que tuve que repetir el curso basico dos veces, porque no me sentia con la suficiente confianza para poder meterme al intermedio. a lo largo de los 4 años que llevo bailando he bailado de todo un poco, aunque mis ritmos favoritos son los que siguen la linea americana, desde el swing, rock n roll, twist he incluso country. </p>
+
+		<p>Videojuegos, que puedo decir de esto, supongo que mencionar que mis generos favoritos son aventuras, mundos abiertos y sobrevivencia, nunca he sido muy fan de seguir una historia, y muchas veces prefiero las mecanicas de juego sobre los graficos o la historia de este. mis juegos favoritos son Rayman 2: The great escape, Toda la saga Souls (Bloodborne incluido), y juegos de supervivencia como lo es Starbound y Don't Starve.</p>
+	</article>
+
+
+	<br>
+	<hr>
+	<br>
+	<br>
+	<article id="Definiciones">
+		<h2>Definiciones:</h2>
+		<br>
+		<h4>HTTP:</h4>
+		<P><strong>HTTP </strong>es un protocolo de intercambio de informacion que se de fine como "Hyper Text Transfer Protocol" con la velocidad necesaria para compartir informacion. El protocolo ha estado en uso desde 1990. HTTP permite especificar el proposito de varias peticiones al sistema.[1]</P>
+		<br>
+		<br>
+		<h4>URL:</h4>
+		<p>La <strong>URL</strong> o "Uniform Resource Location" es un sistema de identificacion de recursos que permite encontrar la localidad del recurso deseado. Existe un documento que describe las reglas que se deben seguir al momento de crear una "URL" que describa la localidad de un recurso y otras de sus caracteristicas.[2]</p>
+		<br>
+		<br>
+		<h4>MIME</h4>
+		<p><strong>MIME</strong> es un acronimo que se refiere a "Multipurpose Internet Mail Extensions" y es un protocolo de representacion de mensajer que permite: Cuerpos de Mensajes textuales que no sean en US-ASCII, diferentes formatos para mensajes no textuales, informacion en los "heaader" textuales en que no sean US-ASCII.[3]</p>
+		<br>
+		<br>
+		<h4>Metodos de HTTP:</h4>
+		<p><strong>GET: </strong>recupera cualquire información que es identificada por ña èticion realizada (Request-URI). Puede ser cambiado a un Get Condicional si la peticion contiene un "IF-Modified-Since" en el header.[1] </p>
+		<p><strong>HEAD: </strong>Este metodo es identico a GET, solo que este no regresa ninguna informacion relacionada con el cuerpo de la entidad.[1] </p>
+		<p><strong>POST: </strong> Este metodo se encarga de enviar informacion al servidor.[1] </p>
+		<br>
+		<h4>Errores de HTTP: </h4>
+		<p>Dentro del protocolo HTTP existen dos tipos de errores, el primero son los errores de cliente, los cuales son identificables porque poseen un codigo que empieza con 4, cuando el cliente detecta este tipo de codigo deja de mandar cualquier tipo de data al servidor.Estos errores son: 400 Bad Request, 401 Unauthorized, 403 Forbidden, 404 Not Found.[1] </p>
+		<p>El otro tipo de error es el error de Servidor, caracterizado por empezar con un 5.Estos Errores son: 500 Internal server Error, 501 Not Implemented, 502 Bad GetWay, 503 Service Unavailable.[1] </p>
+		<br>
+		<br>
+		<h4>XML:</h4>
+		<p><strong>XML </strong> es el acronimo para "Extensible Markup Languaje", que es un formato de texto flexible. Fue creado en un principio para cumplir los objetivos de la publicacion electronica a gran escala. XML es un lenguaje que se utiliza para describir otros lenguajes.[4] </p>
+		<br>
+		<br>
+		<h4>XHTML</h4>
+		<p><strong>XHTML </strong>es una version de HTML que esta hecha de forma uqe XML la considera valida, esta version del lenguaje se utiliza por ser mas tecnica, lo que facilita el cambio de algunaas cosas, asi como el encontrar errores. Fue creado con el objetivo de crear una web semantica, osea que la informacion y la forma de presentar esta sean diferentes.[5] </p>
+		<br>
+		<br>
+		<h4>HTML5</h4>
+		<p><strong>HTML5 </strong>es el estandar actual para la creacion de paginas web. HTML es un lenguaje de programacion que funciona con base a "Tags" los cuales estan encerrados por los simbolos de "<" y ">", los tags especificando cual es la funcion del texto u alguna caracteristica de este. Asi mismo los tags pueden tener otros atributos para reconocerlos, como una clase o un id. La principal diferencia entre la ultima version (HTML5) y la anterior es el hecho de que la mayoria de las etiquetas para dar formato a la pagina fueron cambiadas a otro lenguaje llamado CSS, sin embargo esto puede aumentar el nivel de informacion y trabajo de la aplicacion para comunicar esta informacion.  </p>
+		<br>
+		<br>
+		<h4>Java Script</h4>
+		<p><strong>Java Script </strong>es un lenguaje de programacion derivado de java que se utiliza para poder agregar un nivel de interactividad en las paginas web con el usuario. Java Script puede existir dentro del mismo documento de HTML (no es recomendable) o puede tener su propio documento, permitiendote enlazarlo a los documentos HTML que lo vayan a utilizar.</p>
+		<br>
+		<br>
+		<h4>PHP</h4>
+		<p>Las siglas de PHP representan a "HyperText Preprocessor, y eto es un lenguaje de codigo abierto que se puede integrar a HTML. La ventaja de este lenguaje es que el codigo se ejecuta dentro del mismo servidor, y unicamente se manda el resultado al cliente.[6] </p>
+		<br>
+		<br>
+		<h4>Java Server Pages</h4>
+		<p>El JSP es una tecnologia hecha para diseñar rapidamente paginas web dinamicas, esta herramienta permite cambiar el "layout" de la pagina sin generar cambios en la parte dinamica del contenido.[7] </p>
+		<br>
+		<br>
+		<h4>AJAX</h4>
+		<p><strong>AJAX</strong> es unacronimo que significa "Asyncronous JavaScript And XML" la funcion de AJAX es ejecutar aplicaciones en el cliente mientras se mantiene una comunicacion con el servidor, permitiendo que la pagina se actualice sin la necesidad de que se vuelva a cargar.[8] </p>
+
+
+	</article>
+	<br>
+	<br>
+	<hr>
+	<br>
+
+	<article id="Preguntas">
+		<h1>Preguntas</h1>
+		<br>
+		<br>
+		<strong>¿Cuál es la diferencia entre Internet y la World Wide Web?</strong>
+		<p>El internet es un conjunto de redes interconectadas de manera inalámbrica o alámbrica a través de protocolos como lo son el TCP/IP, mientras que la World Wide Web es el sistema de distribución de documentos que se encarga de mandar paquetes a través del internet, explicándolo con una analogía el internet serian las carreteras que permiten a un usuario viajar entre ciudades (La World Wide Web).</p>
+		<br>
+		<br>
+		<strong>¿Cuál es el propósito de los métodos HTTP: GET, HEAD, POST, PUT, PATCH, DELETE?</strong>
+		<p>GET: Recupera datos de un recurso especifico.</p>
+		<p>HEAD: Pide una respuesta como la de GET pero sin el cuerpo de este ultimo.</p>
+		<p>POST: Envia una entidad a un recurso en especifico, causando un cambio en el servidor.</p>
+		<p>PUT: reemplaza datos del recurso actual con los del recurso pedido.</p>
+		<p>PATCH: Aplica modificaciones parciales a un recurso.</p>
+		<p>DELETE: Borra un recurso especifico.</p>
+		<p>[9]</p>
+		<br>
+		<br>
+		<strong>¿Qué método HTTP se debe utilizar al enviar un formulario HTML, por ejemplo cuando ingresas tu usuario y contraseña en algún sitio? ¿Por qué?</strong>
+		<p>POST, porque al momento de dar click en el botón de iniciar sesión se debe mandar la información del usuario a una base de datos para poder comparar si se encuentra dentro de esta y dependiendo de la respuesta realiza una acción u otra.</p>
+		<br>
+		<br>
+		<strong>¿Qué método HTTP se utiliza cuando a través de un navegador web se accede a una página a través de un URL?</strong>
+		<p>GET, se manda llamar toda la información de la pagina web para desplegarla al usuario.</p>
+		<br>
+		<br>
+		<strong>Un servidor web devuelve una respuesta HTTP con código 200. ¿Qué significa esto? ¿Ocurrió algún error?</strong>
+		<p>No ocurrio ningún error, este es el código estándar para las peticiones realizadas correctamente.</p>
+		<br>
+		<br>
+		<strong>¿Es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que intentó acceder al sitio y se encontró con un error 404? ¿Por qué?</strong>
+		<p>El error 404 es un error de cliente, es por ello que muchas veces el desarrollador es el encargado de corregirlo, sin embargo también puede ser un malware quien lo ocasione, para ello se necesitaría acceder al dispositivo del usuario directamente.</p>
+		<br>
+		<br>
+		<strong>¿Es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que intentó acceder al sitio y se encontró con un error 500? ¿Por qué?</strong>
+		<p>El Error 500 es un error del servidor, es por ello que es deber de la persona que atiende el servidor el atender este tipo de error.</p>
+		<br>
+		<br>
+		<strong>¿Qué significa que un atributo HTML5 esté depreciado o desaprobado (deprecated)? Menciona algunos elementos de HTML 4 que en HTML5 estén desaprobados.</strong>
+		<p>Son los atributos o métodos que han sido remplazados por otros mas funcionales o flexibles en HTML 5, y por ello descontinuados, un ejemplo de esto podría ser "applet" que fue remplazado por "object", o "dir" que fue remplazado por "ul".[10] </p>
+		<br>
+		<br>
+		<strong>¿Cuáles son las diferencias principales entre HTML 4 y HTML5?</strong>
+		<p>Cambia la sintaxis utilizada, asi como agrega elementos como lo es el DOCTYPE, cambia la manera en la que algunos elementos interactúan como por ejemplo la sección <div>, también agrega atributos, como lo son media, ping, o target.
+		llamado css y JavaScript para la ejecución de funciones.
+		</p>
+		<br>
+		<br>
+		<strong>¿Qué componentes de estructura y estilo tiene una tabla?</strong>
+		<p>Estructura: align, cellpadding, cellspacing, frame, rules, summary, width</p>
+		<p>Estilo: bgcolor, border.</p>
+		<p>[11]</p>
+		<br>
+		<br>
+		<strong>¿Cuáles son los principales controles de una forma HTML5?</strong>
+		<p>Text , Radio Button , Submit Button, Reset Button, Button, Color, Date, datetime-local, email, month, number, range, search, tel, time, url, week</p>
+		<br>
+		<br>
+		<strong>¿Qué tanto soporte HTML5 tiene el navegador que utilizas? Puedes utilizar la siguiente página para descubrirlo: http://html5test.com/ (Al responder la pregunta recuerda poner el navegador que utiliza</strong>
+		<p>Opera 50.0, score: 520/555, los principales problemas son: video, audio, 2D graphics y seguridad.</p>
+	</article>
+	<br>
+	<br>
+	<hr>
+	<br>
+
+	<article id="referencias">
+		<h1>Referencias</h1>
+		<p>[1]T. Berners-Lee, "Hypertext Transfer Protocol -- HTTP/1.0", Rfc-editor.org, 1996. [Online]. Available: https://www.rfc-editor.org/rfc/rfc1945.txt. [Accessed: 12- Jan- 2018].</p>
+		<p>[2]O. Levin, "Uniform Resource Locator (URL) Scheme Registration", IETF, 2003. [Online]. Available: https://tools.ietf.org/html/rfc3508. [Accessed: 12- Jan- 2018].</p>
+		<p>[3]N. Freed, "Multipurpose Internet Mail Extensions (MIME) Part One: Format of Internet Message Bodies", rfc-editor, 1996. [Online]. Available: https://www.rfc-editor.org/rfc/rfc2045.txt. [Accessed: 12- Jan- 2018].</p>
+		<p>[4]"Extensible Markup Language (XML)", W3.org, 2018. [Online]. Available: https://www.w3.org/XML/. [Accessed: 12- Jan- 2018].</p>
+		<p>[5]"W3C", w3c.org, 2001. [Online]. Available: http://ftp://62.219.99.166/LearningStandards/XML/W3C-Specifications/XHTML/XHTML-m12n-Rec-20010410.pdf. [Accessed: 12- Jan- 2018].</p>
+		<p>[6]"PHP: ¿Qué es PHP? - Manual", Php.net. [Online]. Available: http://php.net/manual/es/intro-whatis.php. [Accessed: 12- Jan- 2018].</p>
+		<p>[7]"JavaServer Pages Overview", Oracle.com. [Online]. Available: http://www.oracle.com/technetwork/java/overview-138580.html. [Accessed: 12- Jan- 2018].</p>
+		<p>[8]"AJAX Introduction", W3schools.com. [Online]. Available: https://www.w3schools.com/js/js_ajax_intro.asp. [Accessed: 12- Jan- 2018].</p>
+		<p>[9]"Métodos de petición HTTP", Mozilla Developer Network. [Online]. Available: https://developer.mozilla.org/es/docs/Web/HTTP/Methods. [Accessed: 12- Jan- 2018].</p>
+		<p>[10]N. Williams, "Deprecated HTML tags and alternatives", Codehelp.co.uk. [Online]. Available: https://www.codehelp.co.uk/html/deprecated.html. [Accessed: 12- Jan- 2018].</p>
+		<p>[11]"tabla", Mozilla Developer Network. [Online]. Available: https://developer.mozilla.org/es/docs/Web/HTML/Elemento/table. [Accessed: 12- Jan- 2018].</p>
+	</article>
+	<br>
+	<br>
+	<hr>
+	<br>
+	<footer>Esta pagina fue hecha con Sublime Text 3, el link a la pagina es: <a href="https://www.sublimetext.com">Sublime Text 3</a></footer>
+
+</body>
+</html>
