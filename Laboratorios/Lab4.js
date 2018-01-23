@@ -93,3 +93,26 @@ function inverso(n){
 	}
 	document.getElementById("respuestasjs").innerHTML+=res;
 }
+
+var pepe={
+	nombre:"pepe", 
+	edad:22, 
+	hobby: "Leer",
+	mayoredad: function(){
+		if(this.edad>18){
+			return "si";
+		}else{
+			return "no";
+		}
+	},
+	resumen: function(){
+	return this.nombre+" tiene "+this.edad+" años y le gusta "+this.hobby;
+	}
+};
+
+function mayor(){
+	document.getElementById(respuestasjs).innerHTML= pepe.mayoredad;
+}
+function resum(){
+	document.getElementById(respuestasjs).innerHTML=pepe.resumen;
+}
