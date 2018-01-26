@@ -93,6 +93,12 @@ function inverso(n){
 	}
 	document.getElementById("respuestasjs").innerHTML+=res;
 }
+function mayor(){
+	document.getElementById("respuestasjs").innerHTML= pepe.mayoredad;
+}
+function resum(){
+	document.getElementById("respuestasjs").innerHTML=pepe.resumen;
+}
 
 var pepe={
 	nombre:"pepe", 
@@ -110,9 +116,4 @@ var pepe={
 	}
 };
 
-function mayor(){
-	document.getElementById(respuestasjs).innerHTML= pepe.mayoredad;
-}
-function resum(){
-	document.getElementById(respuestasjs).innerHTML=pepe.resumen;
-}
+

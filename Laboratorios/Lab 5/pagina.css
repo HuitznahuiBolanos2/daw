@@ -1,0 +1,26 @@
+.tarjeta {
+  position: relative;
+  z-index: 1;
+  display: block;
+  background: Gainsboro;
+  min-width: 270px;
+  height: 200px;
+  max-width: 350px;
+  -webkit-box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15);
+  -webkit-transition: all 0.3s linear 0s;
+  -moz-transition: all 0.3s linear 0s;
+  -ms-transition: all 0.3s linear 0s;
+  -o-transition: all 0.3s linear 0s;
+  transition: all 0.3s linear 0s; 
+  float: right;
+  margin-right: 50px; 
+  margin-top: 100px;
+}
+.tarjeta:hover{
+  background: Silver;
+}
+.preguntas{
+  margin-left: 10px;
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<title>Laboratorio 5. POE</title>
+	<meta charset="UTF-8">
+
+<head>
+	
+</head>
+<body id="body">
+	<header>Venta de Productos</header>
+	
+	<div id="productos" >
+		<div id="MisteryBook" class="producto">
+			<h3>Mistery Book</h3>
+			<p class="descripcion">Esta caja contien 3 libros seleccionados aleatoriamente de nuestro stack de "Los mejores libros de la historia." con exitos como Haary Potter y la Ileada, dese la oportunidad de conocer un nuevo mundo en la literatura, dejese apacionar por nustras recomendaciones y pierdase en un mundo de emociones. </p>
+			<img src="https://i2.wp.com/mychroniclebookbox.com/wp-content/uploads/2017/11/Crime-and-Mystery-Subscription-Book-Box-1.png?fit=1300%2C1296&ssl=1" class="imgProducto">
+			<form class="menuVenta">
+				Precio:<p class="precio" id="precioMB">600</p> $
+				<input type="button" name="comprar" id="venderMB" value="Agregar al Carro">
+				<input type="number" name="cantidad" id="cantidadMB" value="0" class="cantidad">
+			</form>
+		</div>
+		<div id="MisteryGame" class="producto">
+			<h3>Mistery Game</h3>
+			<p class="descripcion">En este paquete por el increible precio de 200 dolares te haremos llegar a la puerta de tu casa una coleccion de juegos clasicos de los años 2000 a 2008, con los titulos que todo gamer deberia de haber jugado, porfin podras presumir con tus amigos de todas esas horas que pasaste en el televisor para poder terminar estos titulos. </p>
+			<img src="http://www.dealspwn.com/writer/wordpress/wp-content/uploads/2015/02/My-Retro-Game-Box-e1423152477267-540x281.jpg" class="imgProducto">
+			<form class="menuVenta">
+				Precio:<p class="precio" id="precioMG">200</p> $
+				<input type="button" name="comprar" id="venderMG" value="Agregar al Carro">
+				<input type="number" name="cantidad" id="cantidadMG" value="0" class="cantidad">
+			</form>
+		</div>
+		<div id="Vida" class="producto">
+			<h3>Una Vida</h3>
+			<p class="descripcion">Alguna ves te han dicho que te consigas una vida? pues aqui es el lugar donde comprarla, por la humilde cantidad de 1000$ se recibiras una vida pra presumir a todo aquel con el que te encuentres, este paquete cuenta con una sesion de fotos con un experto en Photoshop, para que presumas de tus viajes a todo el mundo e icluso con celebridades.</p>
+			<img src="https://ernestlopezsola.files.wordpress.com/2015/10/qualidade-de-vida-busca-pelo-bem-estar.jpeg" class="imgProducto">
+			<form class="menuVenta">
+				Precio:<p class="precio" id="precioV">1000</p> $
+				<input type="button" name="comprar" id="venderV" value="Agregar al Carro">
+				<input type="number" name="cantidad" id="cantidadV" value="0" class="cantidad">
+			</form>
+		</div>
+		<br>
+		<br>
+		<br>
+		<form>
+			<input type="button" name="finalizar" value="Finalizar Compra" id="finalizar">
+		</form>
+
+	</div>
+</body>
+<script type="text/javascript" src="venta.js"></script>
+<link rel="stylesheet" href="venta.css">
+</html>
