@@ -1,0 +1,36 @@
+input[type=button] {
+   border-top: 1px solid #d4f56a;
+   background: #ffff1a;
+   background: -webkit-gradient(linear, left top, left bottom, from(#ffff4d), to(#ffff1a));
+   background: -webkit-linear-gradient(top, #ffff4d, #ffff1a);
+   background: -moz-linear-gradient(top, #ffff4d, #ffff1a);
+   background: -ms-linear-gradient(top, #ffff4d, #ffff1a);
+   background: -o-linear-gradient(top, #ffff4d, #ffff1a);
+   padding: 3.5px 7px;
+   -webkit-border-radius: 19px;
+   -moz-border-radius: 19px;
+   border-radius: 19px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+   color: #666566;
+   font-size: 19px;
+   font-family: 'Lucida Grande', Helvetica, Arial, Sans-Serif;
+   text-decoration: none;
+   vertical-align: middle;
+   }
+input[type=button]:hover {
+   border-top-color: #e6e600;
+   background: #e6e600;
+   color: #000000;
+   }
+input[type=button]:active {
+   border-top-color: #a3a3a3;
+   background: #a3a3a3;
+   }
+#body{
+   margin-top: 10%;
+   margin-left: 40%;
+   background-color: DarkSlateBlue ;
+}
