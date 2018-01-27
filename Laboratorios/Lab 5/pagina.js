@@ -17,15 +17,15 @@ function sirve(){
 }
 
 function fun1(){
-	var text= "soy una respuesta muy interesante que te iluminara ante la sabiduria."
+	var text= "<h2 >Disminuye el tiempo de prueba para verificar los inputs.</h2>"
 	document.getElementById("1").innerHTML = text;
 }
 function fun2(){
-	var text= "soy una respuesta muy interesante que te iluminara ante la sabiduria."
+	var text= "<h2>Desactivar Javascript</h2>"
 	document.getElementById("2").innerHTML = text;
 }
 function fun3(){
-	var text= "soy una respuesta muy interesante que te iluminara ante la sabiduria."
+	var text= "<h2>Porque si te desactivas el Javascript no validaria nada y laa pagina tampoco funcionaria.</h2>"
 	document.getElementById("3").innerHTML = text;
 }
 function fun4(){

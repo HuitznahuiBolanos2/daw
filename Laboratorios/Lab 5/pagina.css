@@ -5,7 +5,7 @@
   background: Gainsboro;
   min-width: 270px;
   height: 200px;
-  max-width: 350px;
+  width: 350px;
   -webkit-box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15);
   -moz-box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15);
   box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15);
