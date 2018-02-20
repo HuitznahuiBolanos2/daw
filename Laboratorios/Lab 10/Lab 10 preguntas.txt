@@ -1,0 +1,6 @@
+Que muestra la instruccion sp_help materiales?
+-muestra las columnas e informacion importante (llaves, etc...) de la tabla materiales.
+¿Qué efecto tuvo ejecutar el archivo crear.sql?
+-Permitio crear todas las tablas en la base de datos.
+¿Qué utilidad tiene esto?
+-Permite utilizar los archivos como metodos, permitiendote dividir tareas grandes en mas pequeñas, facilitando la solucion de problemas.
