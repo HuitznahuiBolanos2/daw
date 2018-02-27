@@ -1,0 +1,49 @@
+Revisa el contenido de la tabla materiales y determina si existe alguna inconsistencia en el contenido de la tabla. ¿Cuál es? ¿A qué se debe? 
+-Se repite la llave, pero se sigue ordenando por momento en el que entro el archivo
+
+¿Qué ocurrió? 
+-No me permite la entrada porque se repite la llave del material, ya que ahora si es una llave primaria.
+
+¿Qué información muestra esta consulta?
+-Me muestra que tablas tienen condiciones y cuales son estas condiciones dentro de la tabla.
+
+¿Qué sentencias utilizaste para definir las llaves primarias? 
+ALTER TABLE Proveedores add constraint llaveProveedores PRIMARY KEY (RFC) 
+ALTER TABLE Proyectos add constraint llaveProyectos PRIMARY KEY (Numero)
+ 
+¿Qué sentencias utilizaste para definir este constrait? 
+-ALTER TABLE Entregan add constraint llaveEntregan PRIMARY KEY (Clave,RFC,Numero,Fecha)
+
+¿Qué particularidad observas en los valores para clave, rfc y numero? 
+- Todos los valores no dan nada, existen pero no tienen significado.
+
+¿Cómo responde el sistema a la inserción de este registro? 
+-Lo acepta, ya que cumple sus condiciones de no repetir y no ser nulo
+
+¿Qué significa el mensaje que emite el sistema? 
+-Significa que no existe un material que tenga esa clave, y por lo tanto no puede crear una instancia en entregan
+
+¿Qué significado tiene la sentencia anterior? 
+-La sentencia relaciona los campos de clave de entregan y material, por lo que no puedes crear una entrega de un material que no existe.
+
+¿Qué significan las columnas de esas consultas?
+-Son el numero y tipo de llaves y que condiciones tienen estas.
+
+¿Qué uso se le está dando a GETDATE()? 
+-Me regresa la fecha con hora actual.
+
+¿Tiene sentido el valor del campo de cantidad? 
+-No, es 0 y no puedes entregar nada
+
+¿Cómo responde el sistema? 
+-Despliega un mensaje de error en el que explica el porque no se admite un elemento de entregan con cantidad 0
+
+¿Qué significa el mensaje? 
+-Que hay un conflicto en el campo de cantidad debido a un cnonstraint que impide esa entrada como valido.
+
+Integridad Referencial: 
+Es una propiedad de las bases de datos que se encarga de verificar que las tablas utilizadas durante una operacion se 
+mantengan sincronizadas, permitiendo las modificaciones y la eliminacion de elementos.
+
+Microsoft(2010).visitado el 2/26/2018 en :
+https://support.office.com/es-es/article/definir-la-integridad-referencial-564fd679-36e0-45bd-ad67-6458f9ea187c

@@ -1,0 +1,1 @@
+ALTER TABLE entregan add constraint cantidad check (cantidad > 0) 
