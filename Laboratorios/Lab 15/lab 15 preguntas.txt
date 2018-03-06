@@ -1,0 +1,280 @@
+Si algún material no ha se ha entregado ¿Aparecería en el resultado de esta consulta? 
+-No, solo aparecen los materiales que tambien aparezcan en la tabla de entregan.
+
+¿Cuál sería una consulta que obtuviera el mismo resultado sin usar el operador Unión? Compruébalo.
+-SELECT *
+ FROM entregan
+ WHERE clave = 1450
+ OR clave = 1300
+
+¿Cómo está definido el número de tuplas de este resultado en términos del número de tuplas de entregan y de materiales? 
+-la multiplicacion de tuplas en entregan por las de materiales.
+
+¿Por qué aparecen varias veces algunas descripciones de material? 
+-porque son entregados varias veces.
+
+¿Qué resultado obtienes en esta ocasión? 
+-las descripciones que han sido entregadas sin repetir
+
+¿Qué resultado obtienes? 
+Explica que hace el símbolo '%' 
+-Se obtienen todas las descripciones que contengan las letras "si" en alguna parte.
+-El simbolo % se encarga de decir que si contiene esas letras es valida
+
+¿Qué sucede si la consulta fuera : LIKE 'Si' ? 
+¿Qué resultado obtienes? 
+Explica a qué se debe este comportamiento. 
+-No se obtienen resultados por que la bisqueda es absoluta ya que no se le indica algun comportamiento especifico
+
+¿Qué resultado obtienes de ejecutar el siguiente código? 
+-¿Que resultado obtienes? ¿¿¿???
+
+¿Para qué sirve DECLARE? 
+-Crea las variables
+
+¿Cuál es la función de @foo? 
+-Es una variable que guarda varchar.
+
+¿Que realiza el operador SET? 
+-Le asigna un valor a la variable seleccionada.
+
+SELECT RFC FROM Entregan WHERE RFC LIKE '[A-D]%'; 
+-Muestra los rfc's desde la A hasta la D
+
+SELECT RFC FROM Entregan WHERE RFC LIKE '[^A]%'; 
+-Muestra todos los rfc's que no empiezan con la letra A
+
+SELECT Numero FROM Entregan WHERE Numero LIKE '___6'; 
+Muestra los numeros que terminan en 6
+
+¿Cómo filtrarías rangos de fechas? 
+-con un between y si quiero agregar otro rango pongo un OR y otro between
+
+¿Qué hace la consulta? 
+-checa si las entregas de la primera consulta existen dentro de la subconsulta que busca "la" en la razon social.
+
+¿Qué función tiene el paréntesis ( ) después de EXISTS? 
+-es una subconsulta, significa que primero tenemos que hacer lo que esta dentro del parentesis.
+
+¿Qué hace la siguiente sentencia? Explica porque 
+-Muestra los primeros 2 proyectos de la tabla
+
+¿Qué sucede con la siguiente consulta? Explica porque 
+-Muestra un error porque no especifica el numero de Tops's 
+
+¿Qué consulta usarías para obtener el importe de las entregas es decir, el total en dinero de lo entregado, basado en la cantidad de la entrega y el precio del material y el impuesto asignado? 
+
+SELECT m.clave,m.Costo,e.Cantidad,((m.costo-m.PorcentajeImpuesto)*e.cantidad)as Total
+FROM Materiales m, Entregan e
+WHERE M.Clave = e.Clave
+
+Vistas:
+
+CREATE VIEW mat_cant
+as SELECT m.clave, m.descripcion, e.cantidad
+FROM materiales m, Entregan e
+WHERE m.Clave = e.Clave
+
+Create VIEW prov_proy
+as SELECT  distinct pr.RazonSocial, p.Denominacion
+FROM Proyectos p, Entregan e, Proveedores pr
+WHERE p.Numero = e.Numero AND PR.RFC = e.RFC
+
+CREATE VIEW prov_imp
+as SELECT distinct pr.RFC, pr.RazonSocial, count(e.RFC) as 'Entregas'
+FROM Proveedores pr, Entregan e
+WHERE PR.RFC =e.RFC
+GROUP BY pr.RFC, pr.RazonSocial
+
+CREATE VIEW  prov_mat
+as SELECT DISTINCT pr.RazonSocial, pr.RFC, m.Clave,m.Descripcion
+FROM Proveedores pr, Entregan e, Materiales m
+WHERE PR.RFC = e.RFC AND m.Clave = e.Clave
+
+CREATE VIEW proy_caros
+as SELECT DISTINCT p.Denominacion, sum(e.cantidad*m.costo) as 'precio'
+FROM Proyectos p, Entregan e, Materiales m
+WHERE p.Numero = e.Numero AND m.Clave = e.Clave
+GROUP BY P.Denominacion
+Having SUM(e.Cantidad*m.Costo) > 725000
+
+Consultas:
+
+ Los materiales (clave y descripción) entregados al proyecto "México sin ti no estamos completos". 
+SELECT m.clave, m.descripcion
+FROM Materiales m, Entregan e, Proyectos p
+WHERE m.clave = e.clave AND e.Numero = p.Numero
+AND p.Denominacion = 'Mexico sin ti no estamos completos'
+
+1030	Varilla 4/33
+1230	Cemento 
+1430	Pintura B1022
+
+3 rows
+-------------------------------------------------------------------------------
+
+      Los materiales (clave y descripción) que han sido proporcionados por el proveedor "Acme tools". 
+
+SELECT m.Clave, m.Descripcion
+FROM Materiales m,Entregan e, Proveedores p
+WHERE m.Clave = e.Clave AND e.RFC = p.RFC
+AND  p.RazonSocial= 'Acme tools'
+
+0 rows
+
+------------------------------------------------------------------------------------
+
+      El RFC de los proveedores que durante el 2000 entregaron en promedio cuando menos 300 materiales. 
+
+SELECT p.RFC, AVG(e.cantidad)as promedio
+FROM Proveedores p, entregan e
+WHERE p.RFC = e.RFC
+AND e.Fecha BETWEEN '01/01/2000' AND '31/12/2000'
+GROUP BY p.RFC
+HAVING  AVG(e.cantidad)> 300
+
+BBBB800101   	392.400000
+CCCC800101   	372.000000
+DDDD800101   	314.333333
+
+7 rows
+
+---------------------------------------------------------------------------------------------
+
+      El Total entregado por cada material en el año 2000. 
+
+SELECT m.clave, sum(e.cantidad) as Cantidades
+FROM Materiales m, Entregan e
+WHERE e.Fecha BETWEEN '01/01/2000' AND '31/12/2000'
+GROUP BY m.Clave
+
+1000	10417.00
+1010	10417.00
+1020	10417.00
+
+44 rows
+
+---------------------------------------------------------------------------------------------
+
+      La Clave del material más vendido durante el 2001.
+
+SELECT top 1 m.clave, sum(e.cantidad) as 'Total de ventas'
+FROM Materiales m, Entregan e
+WHERE m.Clave = e.Clave
+AND e.Fecha BETWEEN '01/01/2001' AND '31/12/2001'
+GROUP BY m.Clave
+ORDER BY 'Total de ventas' DESC
+
+1020	1060.00
+
+1 rows
+
+---------------------------------------------------------------------------------------------
+
+      Productos que contienen el patrón 'ub' en su nombre. 
+
+SELECT clave, descripcion
+FROM Materiales
+WHERE Descripcion LIKE '%ub%'
+
+1180	Recubrimiento P1001
+1190	Recubrimiento P1010
+1200	Recubrimiento P1019
+
+12 rows
+
+--------------------------------------------------------------------------------------------
+
+      Denominación y suma del total a pagar para todos los proyectos. 
+
+SELECT p.Denominacion,sum(m.Costo * e.cantidad) as 'total'
+FROM Proyectos p, Entregan e, Materiales m
+WHERE p.Numero = e.Numero AND  m.Clave = e. Clave
+GROUP BY p.Denominacion
+
+Ampliación de la carretera a la huasteca	724880.0000
+Aztecón	146595.0000
+CIT Campeche	157755.0000
+
+20 rows
+
+--------------------------------------------------------------------------------------------
+
+      Denominación, RFC y RazonSocial de los proveedores que se suministran materiales al proyecto Televisa 
+	en acción que no se encuentran apoyando al proyecto Educando en Coahuila. (Solo usando vistas)
+
+CREATE VIEW televisaAccion 
+as SELECT DISTINCT p.Denominacion, pr.RFC, pr.RazonSocial
+FROM Proyectos p, Entregan e, Proveedores pr
+WHERE p.Numero=e.Numero AND  e. RFC = pr.RFC
+AND p.Denominacion = 'Televisa en acción'
+
+CREATE VIEW edCoah 
+as SELECT DISTINCT p.Denominacion, pr.RFC, pr.RazonSocial
+FROM Proyectos p, Entregan e, Proveedores pr
+WHERE p.Numero=e.Numero AND  e. RFC = pr.RFC
+AND p.Denominacion = 'Educando en Coahuila'
+
+
+SELECT Denominacion, RFC, RazonSocial
+FROM televisaAccion
+WHERE RFC not in (Select RFC FROM edCoah)
+
+Televisa en acción	CCCC800101   	La Ferre
+Televisa en acción	DDDD800101   	Cecoferre
+
+2 rows
+
+--------------------------------------------------------------------------------------------------------
+
+	Denominación, RFC y RazonSocial de los proveedores que se suministran materiales al proyecto Televisa en acción 
+	  que no se encuentran apoyando al proyecto Educando en Coahuila. (Sin usar vistas, utiliza not in, in o exists).
+
+SELECT DISTINCT p.Denominacion, pr.RFC, pr.RazonSocial
+FROM Proyectos p, Entregan e, Proveedores pr
+WHERE p.Numero=e.Numero AND  e. RFC = pr.RFC
+AND p.Denominacion = 'Televisa en acción'
+AND PR.RFC NOT IN (SELECT DISTINCT pr.RFC
+FROM Proyectos p, Entregan e, Proveedores pr
+WHERE p.Numero=e.Numero AND  e. RFC = pr.RFC
+AND p.Denominacion = 'Educando en Coahuila')
+
+Televisa en acción	CCCC800101   	La Ferre
+Televisa en acción	DDDD800101   	Cecoferre
+
+2 rows
+
+---------------------------------------------------------------------------------------------------------------
+
+      Costo de los materiales y los Materiales que son entregados al proyecto Televisa en acción cuyos proveedores 
+	también suministran materiales al proyecto Educando en Coahuila.  
+
+	SELECT m.Clave, m.Costo
+FROM Materiales m, Entregan e, Proveedores pr, Proyectos p
+WHERE m.Clave = e.Clave AND pr.RFC = e.RFC AND p.Numero = e.Numero
+AND P.Denominacion = 'Televisa en acción'
+AND PR.RazonSocial in (SELECT Distinct pr.RazonSocial
+			FROM Proveedores pr, entregan e, Proyectos p
+			WHERE PR.RFC = E.RFC and p.Numero = e.Numero
+			and p.Denominacion = 'Educando en Coahuila'
+			)
+
+1080	50.00
+1280	34.00
+
+2 rows
+
+-----------------------------------------------------------------------------------------------------------------
+
+ Nombre del material, cantidad de veces entregados y total del costo de dichas entregas por material de todos los proyectos. 
+
+SELECT m.Descripcion, count(e.cantidad) as 'Entregas', sum(e.Cantidad*m.Costo) as 'Costo Total'
+FROM materiales m, entregan e
+WHERE m.Clave = e.clave 
+GROUP BY m.Descripcion
+
+Arena	3	213400.0000
+Block	3	50640.0000
+Cantera amarilla	3	172500.0000
+
+42 rows
