@@ -76,6 +76,25 @@
       return true;
     }
   }
+  function delete_by_name($pod_name){
+    $db = connect();
+    $query = 'DELETE FROM podcasts WHERE nombrePod = "'.$pod_name.'"';
+
+
+    $results = mysqli_query($db,$query);
+    disconnect($db);
+    return $results;
+  }
+
+  function update_by_name($nombrePod,$Descripcion,$id){
+    $db = connect();
+
+    $query = 'UPDATE podcasts SET nombrePod="'.$nombrePod.'" , Descripcion="'.$Descripcion.'" WHERE id= "'.$id.'"';
+
+    $results = mysqli_query($db,$query);
+    disconnect($db);
+    return $results;
+  }
 
 
 
@@ -88,5 +107,6 @@
   var_dump(login('pedro', 'hola'));*/
   //var_dump(getPodcastsHtml());
   //var_dump(getLastPodcastHtml());
-
+  //var_dump(delete_by_name('hoguera'));
+  var_dump(update_by_name('o','hahahahaha','1'));
  ?>

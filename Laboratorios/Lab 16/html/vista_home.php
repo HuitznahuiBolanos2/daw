@@ -16,6 +16,11 @@ function getPodcastsHtml(){
                                       <span class="card-title">'.$fila["nombrePod"].'</span>
                                   </div>
                                   <div class="card-content">
+                                  <form action="borrar.php" method="post">
+                                    <button type="submit" class="btn btn-primary" name="podi" value="'.$fila["nombrePod"].'">Cerrar</button>
+                                  </form>
+
+
                                     <p>Descripcion: '.$fila["Descripcion"].'.</p>
                                     <p>Publicado el: '.$fila["created_at"].'.</p>
                                   </div>
