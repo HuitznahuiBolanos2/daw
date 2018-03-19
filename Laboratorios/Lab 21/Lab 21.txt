@@ -1,0 +1,30 @@
+¿Qué hace el primer bloque del código (bloque del IF)? 
+-Se encarga de checar si ya existe ese "procedure" y si existe lo borra
+
+¿Para qué sirve la instrucción GO?
+-Es una señal la cual significa que la seccion anterior es enviada a una instancia de sql server,
+manda todo lo que se escribio desde el ultimo "GO" o desde el inicio del documento.
+
+¿Explica que recibe como parámetro este Procedimiento y qué tabla modifica?
+-recive una clave (numero), una descripcion(String), un costo(numero) y un impuesto(numero).
+Y agrega una instancia a la tabla materiales.
+
+Explica en tu reporte quérecibe como parámetro este Procedimiento y qué hace
+-Recibe un string y un numero, y procede a usar el string para buscarlo dentro de la base de datos en materiales y el 
+numero es el costo minimo que puede tener el producto.
+
+
+//----------LAB 16-------------------------
+DELIMITER//
+CREATE PROCEDURE crearUsuario(IN uid INT(5), IN unombre VARCHAR(10), IN upassword VARCHAR(16), IN ucreated_at TIMESTAMP)
+BEGIN
+INSERT INTO usuario (id,nombre,password,created_at) VALUES(uid,unombre,upassword,ucreated_at)
+END //
+
+//-----------Proyecto-------------------------
+DELIMITER//
+CREATE PROCEDURE crearCliente(IN uid VARCHAR(10), IN unombre VARCHAR(20), uzip VARCHAR(5), utelefono VARCHAR(10), udireccion VARCHAR(20), uciudad VARCHAR(20), uestado VARCHAR(20), upais VARCHAR(20), urfc VARCHAR(12), uemail VARCHAR(20))
+BEGIN
+INSERT INTO cliente (id_cliente,nombre,zip,telefono,direccion,ciudad,estado,pais,rfc,email) VALUES (uid,unombre,uzip,utelefono,udireccion,uciudad,uestado,upais,urfc,uemail)
+END//
+
