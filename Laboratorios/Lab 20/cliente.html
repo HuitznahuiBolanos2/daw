@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
   <html>
   <head>
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <!--  Material Dashboard CSS    -->
-    <link href="css/material-dashboard.css?v=1.2.0" rel="stylesheet" />
+<!--    <link href="css/material-dashboard.css?v=1.2.0" rel="stylesheet" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
      <meta charset=UTF-8>
   </head>
@@ -16,10 +16,11 @@
         </div>
         <div class="card-content">
         <!--  <form action="crearVenta.php" method="post"> -->
-              <div class="row">
+  <!--            <div class="row">
                   <div class="col-md-6">
                       <div class="form-group label-floating">
                           <label class="control-label">Cliente</label>
+                          <input type="text" name="cliente" id="cl1" value="" onkeyup="request()">
 
                           <input type="radio" name="tipo" value="empresas" class="form-control" >Empresas
 
@@ -33,7 +34,7 @@
               </div>
           <!--  </form>-->
 
-
+<!--
         </div>
       </div>
       <div class="col-md-6" id="div_accion" >
@@ -43,7 +44,68 @@
 
     <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
     <script type="text/javascript" src="js/jquery.js"></script>
+    <script src=”https://code.jquery.com/ui/1.12.0/jquery-ui.js”></script>
+    <script type="text/javascript" src="auto.js"></script>
   </body>
 
+
+</html>
+-->
+<!doctype html>
+<html lang="en">
+<head>
+
+
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script type="text/javascript" src="auto.js"></script>
+
+  <link href="css/bootstrap.min.css" rel="stylesheet" />
+  <!--  Material Dashboard CSS    -->
+  <link href="css/material-dashboard.css?v=1.2.0" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+   <meta charset=UTF-8>
+</head>
+<body>
+<div class="card">
+  <div class="card-header">
+    <h4 class="tittle">Hola soy una tarjeta</h4>
+  </div>
+  <div class="card-content">
+    <form class="form-group">
+      <div class="ui-widget">
+        <div class="row">
+          <label for="productos">Productos: </label>
+          <input id="productos" class="form-control col-md-6">
+        </div>
+        <div class="row">
+          <label>Cliente: </label>
+          <input id="cliente" class="form-control col-md-6">
+        </div>
+        <button type="button" name="button" id="submit" class="btn-primary pull-right">Hola soy un boton</button>
+      </div>
+    </form>
+
+  </div>
+</div>
+<!--
+<div class="col-md-6" id="div_accion" >
+  <h4>Hola yo nodeberia de estar aqui</h4>
+</div>
+-->
+
+
+
+</body>
+<!--
+<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+-->
+
+<script type="text/javascript" src="js/jquery.js"></script>
+
+<script src=”https://code.jquery.com/ui/1.12.0/jquery-ui.js”></script>
 
 </html>

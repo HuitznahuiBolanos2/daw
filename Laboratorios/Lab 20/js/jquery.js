@@ -5,7 +5,4 @@ $(document).ready(function() {
 
   });
 });
-
-function request(){
-  alert("request");
-}
+alert("Hola");

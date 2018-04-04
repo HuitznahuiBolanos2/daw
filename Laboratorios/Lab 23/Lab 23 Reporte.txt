@@ -1,0 +1,22 @@
+¿Que pasa cuando deseas realizar esta consulta? 
+-Se pueden ver las instancias de los clientes que realizamos en el otro usuario.
+
+¿Qué pasa cuando deseas realizar esta consulta? 
+-No se puede realizar la query, ya que  aun no termina la transaccion
+
+Explica por qué ocurre dicho evento.
+-Si se puede ver, porque esa parte de la tabla ya esta completa, y arriba.
+
+¿Qué ocurrió y por qué? 
+-Me regreso la primera prueba(solo los 3 primeros clientes), debido a que cancele 
+todas las instrucciones que existen dentro de la prueba 2
+
+¿Para qué sirve el comando @@ERROR revisa la ayuda en línea? 
+-Retorna el numero de erro de la ultima transaccion realizada.
+
+¿Explica qué hace la transacción? 
+-Intenta insertar nuevos clientes, pero repite una clave y causa un error
+
+¿Hubo alguna modificación en la tabla? Explica qué pasó y por qué. 
+-No, ninguna, al encontrar el error realiza un rollback y borra la transaccion
+
